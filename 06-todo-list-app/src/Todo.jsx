@@ -1,17 +1,22 @@
 import React from "react";
+import { GiCrossMark } from "react-icons/gi";
 
-function Todo({ title, completed, id }) {
+function Todo({ title, completed, id, toggleCompleted, removeTodo }) {
   return (
-    <div
-      style={{
-        border: "1px solid #292929",
-        padding: "1rem",
-        margin: "1rem",
-      }}
-    >
-      <p>Title : {title}</p>
-      <p>completed : {completed ? "true" : "false"}</p>
-      <p></p>
+    <div className="todo">
+      <div className="todo-title">
+        <input
+          type="checkbox"
+          checked={completed}
+          onChange={() => {
+            toggleCompleted(id);
+          }}
+        />
+        <p className={`${completed ? "completed" : ""}`}> {title}</p>
+      </div>
+      <div className="cross-btn" onClick={() => removeTodo(id)}>
+        <GiCrossMark />
+      </div>
     </div>
   );
 }
