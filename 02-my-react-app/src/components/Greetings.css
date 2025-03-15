@@ -1,10 +1,10 @@
 .bg-black {
-  background-color: #212121;
-  color: rgb(255, 255, 255);
+  background-color: #9ed2dc;
+  color: rgb(56, 48, 48);
 }
 .container {
   max-width: 500px;
   margin: auto;
-  border: 2px solid red;
+  border: 2px solid rgb(11, 15, 10);
   padding: 20px;
 }

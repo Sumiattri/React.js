@@ -1,5 +1,5 @@
 function Greetings({ firstName, lastName, age, user, User }) {
-  //   console.log(props); // gives a object in console whose property is {firstName: "Aryan", lastName:"Rao"}(but only if props is defined in parameter section of Freetings)
+  //   console.log(props); // gives a object in console whose property is {firstName: "Aryan", lastName:"Rao"}(but only if props is defined in parameter section of Greetings)
   //   const firstName = props.firstName;
   //   const lastName = props.lastName;
 

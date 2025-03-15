@@ -23,7 +23,7 @@ function App() {
       <button onClick={handleClick}>Click me</button>
       <br /> <br />
       {/* <button onClick={wrapperfunction}>Click me 2</button> */}
-      {/* now inspite of giving refrence if this wrapper function here, which will then call handleClick2 function and then we'll pass
+      {/* now inspite of giving refrence in this wrapper function here, which will then call handleClick2 function and then we'll pass
       the arguments in handleClick2 function, we can directly use arrow function like below  */}
       <button
         onClick={(e) => {

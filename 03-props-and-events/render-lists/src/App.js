@@ -16,12 +16,12 @@ function App() {
       <User
         id={users[1].id}
         firstName={users[1].firstName}
-        lastName={users[0].lastName}
+        lastName={users[1].lastName}
       />
       <User
         id={users[2].id}
         firstName={users[2].firstName}
-        lastName={users[0].lastName}
+        lastName={users[2].lastName}
       /> */}
       {/* now, inspite of manually rendering User component each time and passing props can be hectic in large scale apps
       so, we use map function */}
