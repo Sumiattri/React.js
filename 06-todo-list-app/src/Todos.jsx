@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 function Todos({ todos, toggleCompleted, removeTodo }) {
   return (
-    <div class="todos_container">
+    <div className="todos_container">
       {todos.map((todo) => {
         return (
           <Todo

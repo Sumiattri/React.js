@@ -32,7 +32,8 @@ function App() {
         <input
           type="text"
           id="password"
-          value={password} // onChange={handleNameChange}
+          value={password}
+          // onChange={handleNameChange}
           onChange={(e) => setPassword(e.target.value)}
         />
         <br /> <br />

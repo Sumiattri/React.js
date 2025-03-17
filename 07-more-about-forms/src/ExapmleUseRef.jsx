@@ -32,9 +32,9 @@ import { useState, useRef } from "react";
 //     );
 // }
 
-// controlled components
+// controlled components => using State
 
-// uncontrolled using useRef
+// uncontrolled components using useRef
 
 // state vs useRef
 
