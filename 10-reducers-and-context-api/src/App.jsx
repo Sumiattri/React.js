@@ -1,11 +1,12 @@
 import { useState } from "react";
+import CounterAppWithUseState from "./CounterAppWithUseState";
+import CounterAppWithUseReducer from "./CounterAppWithUseReducer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div></div>
+      <CounterAppWithUseState />
+      <CounterAppWithUseReducer />
     </>
   );
 }
