@@ -43,8 +43,11 @@ function ExampleUseRef() {
   const passwordRef = useRef();
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(usernameRef);
+    console.log(passwordRef);
     const usernameInput = usernameRef.current;
     const passwordInput = passwordRef.current;
+
     console.log("Username", usernameInput.value);
     console.log("Password", passwordInput.value);
   }

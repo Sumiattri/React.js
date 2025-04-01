@@ -4,6 +4,9 @@ import CleanupFunctionDemo from "./CleanupFunctionDemo";
 import ExampleUseEffect from "./ExampleUseEffect";
 import FetchDataExample from "./FetchDataExample";
 import MouseMoveEvent from "./MouseMoveEvent";
+import AbortFtechRequest from "./AbortFetchRequest";
+import AbortFetchRequest from "./AbortFetchRequest";
+import UserForm from "./AutomaticFocus";
 
 function App() {
   const [showComponent, setShowComponent] = useState(true);
@@ -27,7 +30,7 @@ function App() {
       {showComponent && <CleanupFunctionDemo />} */}
       {/* shorthand for ternary Operator =>  {showComponent ? <CleanupFunctionDemo /> : null} */}
       <br />
-      <div style={{ margin: "1rem", fontSize: "25px" }}>
+      {/* <div style={{ margin: "1rem", fontSize: "25px" }}>
         <label htmlFor="showcomponent">ShowComponent</label>
         <input
           type="checkbox"
@@ -36,7 +39,20 @@ function App() {
           onChange={() => setShowComponent(!showComponent)}
         />
       </div>
-      {showComponent && <MouseMoveEvent />}
+      {showComponent && <MouseMoveEvent />} */}
+      <br />
+      {/* <div style={{ margin: "1rem", fontSize: "25px" }}>
+        <label htmlFor="showcomponent">Show Component</label>
+        <input
+          type="checkbox"
+          checked={showComponent}
+          id="showcomponent"
+          onChange={() => setShowComponent(!showComponent)}
+        />
+      </div
+      {showComponent && <AbortFetchRequest />} */}
+      <br />
+      <UserForm />
     </>
   );
 }
