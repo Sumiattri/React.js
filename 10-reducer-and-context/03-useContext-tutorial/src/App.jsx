@@ -1,32 +1,43 @@
-import { useState } from "react";
+// to avoid prop-drilling we use context
+
+// to do so, we wrapps the component and its child component in context-wrapper
+// then we put put data(function,state,etc) in that wrapper
+// then it can be accessed throughout the components without prop drilling
+
+// how to use context
+// step 1 : import createContext from react
+// step 2 : create a context outside the component(function)
+// step 3 : wrap application in context.Provider
+
+import MyComponent from "./MyComponent";
+import { createContext } from "react";
+
+const MyAppContext = createContext();
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  function myFunc() {
+    console.log("Hello from myFunc");
+  }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <MyAppContext.Provider
+      value={{ key1: "value1", key2: "value2", someFunc: myFunc }}
+    >
+      <div
+        style={{
+          padding: "2rem",
+          margin: "2rem",
+          backgroundColor: "#C8E4B2",
+          borderRadius: "10px",
+          height: "1000vh",
+          boxShadow: "4px 4px 10px rgba(0, 0, 0, 0.2)",
+        }}
+      >
+        <h1>APP</h1>
+        <MyComponent />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </MyAppContext.Provider>
   );
 }
 
 export default App;
+export { MyAppContext };
