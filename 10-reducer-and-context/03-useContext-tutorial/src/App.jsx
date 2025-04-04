@@ -11,8 +11,11 @@
 
 import MyComponent from "./MyComponent";
 import { createContext } from "react";
+// we could have also created the context in main.js inspite of app.js as app.js is also a child of main.js
 
 const MyAppContext = createContext();
+// export const MyAppContext = createContext();
+// above line if we want to create and export the context at the same time
 
 function App() {
   function myFunc() {
