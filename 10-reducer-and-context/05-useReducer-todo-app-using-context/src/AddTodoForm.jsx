@@ -1,8 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-function AddTodoForm({ dispatch }) {
-  const [title, setTitle] = useState("");
+import { useTodos } from "./TodosProvider";
+
+function AddTodoForm() {
+  const { addTodo } = useTodos();
+  const [title, setTitle] = useState(""); // making new State to store new todo entered by user
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -13,10 +17,9 @@ function AddTodoForm({ dispatch }) {
     }
 
     const newTodo = { title: title, id: crypto.randomUUID(), completed: false };
-    dispatch({ type: "ADD_TODO", payload: { newTodo } });
+    addTodo(newTodo);
     setTitle("");
   };
-
   return (
     <div style={{ padding: "2rem" }}>
       <form

@@ -1,13 +1,13 @@
 import React from "react";
 import { GiCrossMark } from "react-icons/gi";
+// import { useContext } from "react";
+// import { TodoContext } from "./TodosProvider";
 
-function Todo({ id, title, completed, dispatch }) {
-  const handleDelete = () => {
-    dispatch({ type: "DELETE_TODO", payload: { id: id } });
-  };
-  const handleToggle = () => {
-    dispatch({ type: "TOGGLE_TODO", payload: { id: id } });
-  };
+import { useTodos } from "./TodosProvider";
+
+function Todo({ id, title, completed }) {
+  const { handleDelete, handleToggle } = useTodos();
+
   return (
     <div
       style={{
@@ -28,14 +28,14 @@ function Todo({ id, title, completed, dispatch }) {
     >
       <input
         style={{ width: "20px", height: "20px", marginRight: "10px" }}
-        onClick={handleToggle}
+        onClick={() => handleToggle(id)}
         type="checkbox"
       ></input>
 
       <h4 style={{ textDecoration: completed ? "line-through" : "solid" }}>
         title: {title}
       </h4>
-      <div onClick={handleDelete}>
+      <div onClick={() => handleDelete(id)}>
         <GiCrossMark />
       </div>
     </div>
