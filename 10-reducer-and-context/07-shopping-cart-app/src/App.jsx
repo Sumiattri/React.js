@@ -1,11 +1,13 @@
-import { useState } from "react";
+import Products from "./components/Products";
+import CartProvider from "./context/CartProvider";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <>
-      <h1>hii how are you</h1>
-      <p>i am good</p>
-    </>
+    <CartProvider>
+      <Header />
+      <Products />
+    </CartProvider>
   );
 }
 
