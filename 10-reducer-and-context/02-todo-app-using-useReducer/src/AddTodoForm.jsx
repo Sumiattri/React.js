@@ -25,10 +25,10 @@ function AddTodoForm({ dispatch }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          gap: "10px",
+          gap: "20px",
           marginBottom: "20px",
           backgroundColor: "white",
-          padding: "10px",
+          padding: "20px",
           borderRadius: "10px",
           border: "none",
           width: "100%",
@@ -40,6 +40,7 @@ function AddTodoForm({ dispatch }) {
           type="text"
           id="title"
           name="title"
+          style={{ border: "none", height: "30px" }}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />

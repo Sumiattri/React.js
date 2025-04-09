@@ -24,13 +24,10 @@ function Todo({ id, title, completed, dispatch }) {
         height: "50px",
         paddingLeft: "15px",
         paddingRight: "15px",
+        overflowY: "auto" /* or scroll / hidden / visible */,
       }}
     >
-      <input
-        style={{ width: "20px", height: "20px", marginRight: "10px" }}
-        onClick={handleToggle}
-        type="checkbox"
-      ></input>
+      <input onClick={handleToggle} type="checkbox"></input>
 
       <h4 style={{ textDecoration: completed ? "line-through" : "solid" }}>
         title: {title}

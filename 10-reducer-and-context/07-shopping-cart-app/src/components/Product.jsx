@@ -1,22 +1,34 @@
 import { useCart } from "../context/CartProvider";
+import styles from "./Product.module.css";
 
 function Product({ id, title, price, img }) {
   const { addItemToCart } = useCart();
 
   function handleAdd() {
-    const newCartItem = { id: id, title: title, price: price, quantity: 1 };
+    // for (let item of cart) {
+    //   if (item.id === id) {
+    //     alert("Item already added to cart");
+    //     return;
+    //   }
+    // }
+    const newCartItem = {
+      id: id,
+      title: title,
+      price: price,
+      quantity: 1,
+      img: img,
+    };
     addItemToCart(newCartItem);
   }
 
   return (
-    <div
-      style={{ padding: "1rem", margin: "1rem", border: "2px solid #343434" }}
-    >
-      <p>id:{id}</p>
-      <img src={img} alt={title} height={200} />
-      <p>title:{title}</p>
-      <p>price:{price}</p>
-      <button onClick={handleAdd}>Add to cart</button>
+    <div className={styles.product}>
+      <img src={img} alt={title} className={styles.productImage} />
+      <p className={styles.title}>{title}</p>
+      <p className={styles.price}>{`₹${price}`}</p>
+      <button className={styles.AddToCartButton} onClick={handleAdd}>
+        Add to cart
+      </button>
     </div>
   );
 }

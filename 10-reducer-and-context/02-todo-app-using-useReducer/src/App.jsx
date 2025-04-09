@@ -51,15 +51,25 @@ function App() {
   return (
     <div
       style={{
-        margin: "0 auto",
-        textAlign: "center",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        minHeight: "100vh",
+        border: " 2px solid red",
       }}
     >
       <AddTodoForm dispatch={dispatch} />
-      <Todos todos={todos} dispatch={dispatch} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          width: "100%",
+          maxWidth: "500px",
+        }}
+      >
+        <Todos todos={todos} dispatch={dispatch} />
+      </div>
     </div>
   );
 }
