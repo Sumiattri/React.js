@@ -1,8 +1,13 @@
 .header {
+  position: sticky; /* or you can use fixed */
+
+  top: 0;
+  z-index: 1000;
   background-color: #637d88;
   color: #ecf0f1;
   margin-bottom: 2rem;
 }
+
 .nav {
   display: flex;
   justify-content: space-between;
