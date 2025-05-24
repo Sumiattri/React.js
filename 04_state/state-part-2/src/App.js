@@ -5,9 +5,9 @@ function App() {
   console.log("App Rendererd");
 
   const [users, setUsers] = useState([
-    { id: 1, firstName: "Sumit", lastName: "Attri", age: 21 },
-    { id: 2, firstName: "Aryan", lastName: "Rao", age: 21 },
-    { id: 3, firstName: "Amulya", lastName: "Bhardwaj", age: 20 },
+    { id: 1, firstName: "Sumit", lastName: "Attri", age: 22 },
+    { id: 2, firstName: "Aryan", lastName: "Rao", age: 20 },
+    { id: 3, firstName: "Amulya", lastName: "Bhardwaj", age: 22 },
   ]);
   function increaseAge(id) {
     // console.log(id);
@@ -34,6 +34,23 @@ function App() {
         }
       });
     });
+
+    //--- ---- -- --- -- -----
+
+    //   const newState = users.map((user) =>
+    // user.id === id ? { ...user, age: user.age + 1 } : user);
+    // setUsers(newState)
+
+    //----- --- -- - ---- - --- --
+
+    // const newState = users.map((user) => {
+    //   if (user.id === id) {
+    //     return { ...user, age: user.age + 1 };
+    //   } else {
+    //     return user;
+    //   }
+    // });
+    // setUsers(newState);
   }
   function deleteUser(id) {
     // let newState = [];
