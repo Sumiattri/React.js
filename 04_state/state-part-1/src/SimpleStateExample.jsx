@@ -22,7 +22,7 @@
 //useState --> a hook
 //useState(defaultValues)--> returns array-->[StateValue,functionToUpdateThatStateValue]
 
-//state->intialValue, state->changedValue ==> when state changes, react renders our component and then UI changest
+//state->intialValue, state->changedValue ==> when state changes, react renders our component and then UI changes
 
 import { useState } from "react";
 function SimpleStateExample() {
