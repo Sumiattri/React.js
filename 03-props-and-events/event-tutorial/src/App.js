@@ -3,12 +3,27 @@ import Greetings from "./components/Greetings";
 function App() {
   function handleClick(e) {
     console.log("You clicked me");
-    console.log(e.target);
-    // e.target.textContent = "You Clicked me";
+    const btn = e.target;
+    console.log(btn);
+
+    if (btn.textContent === "Click me") {
+      btn.textContent = "You Clicked me";
+    } else {
+      btn.textContent = "Click me";
+    }
   }
 
   function handleClick2(firstName, lastName) {
     console.log("You clicked Button 2", firstName, lastName);
+  }
+  function handleClick3(e) {
+    const Attri = e.target;
+    console.log(Attri);
+    if (Attri.textContent === "Sumit Attri") {
+      Attri.textContent = "You Clicked Attri";
+    } else {
+      Attri.textContent = "Sumit Attri";
+    }
   }
 
   //wrapper function
@@ -34,7 +49,7 @@ function App() {
         Click me 2
       </button>
       <br />
-      <Greetings onClick={handleClick} />
+      <Greetings onClick={handleClick3} />
       {/* onClick will be passed as a prop to Greetings element which will be a function handleclick, that we can access in Greetings components
       and use onClick on this prop, Note: onClick is just a prop here, so it can have any name */}
     </div>
