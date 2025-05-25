@@ -4,7 +4,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // function handleNameChange(e) {
-  //   // console.log(e.target.value);
+  //   console.log(e.target.value);
 
   //   setUsername(e.target.value);
   // }
