@@ -7,6 +7,7 @@ import { useState, useRef } from "react";
 
 // [state, setState] = useState()
 
+// below are the thing we can store in useRef
 // string
 // number
 // []
@@ -35,6 +36,8 @@ import { useState, useRef } from "react";
 // controlled components => using State
 
 // uncontrolled components using useRef
+// useRef() returns a object having a current property having a value we pass to useRef
+// we can also store reference of html elements in useRef
 
 // state vs useRef
 
