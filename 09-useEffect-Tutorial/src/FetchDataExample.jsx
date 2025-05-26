@@ -24,6 +24,8 @@ function FetchDataExample() {
 
   async function fetchData() {
     const response = await fetch(URL);
+    console.log(response);
+
     if (!(response.status >= 200 && response.status <= 299)) {
       setIsError(true);
       setErrorMsg(`${response.status} Error`);

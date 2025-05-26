@@ -6,7 +6,8 @@ import FetchDataExample from "./FetchDataExample";
 import MouseMoveEvent from "./MouseMoveEvent";
 import AbortFtechRequest from "./AbortFetchRequest";
 import AbortFetchRequest from "./AbortFetchRequest";
-import UserForm from "./AutomaticFocus";
+import StrictModeExample from "./StrictModeExample";
+import AutomaticFocus from "./AutomaticFocus";
 
 function App() {
   const [showComponent, setShowComponent] = useState(true);
@@ -49,10 +50,21 @@ function App() {
           id="showcomponent"
           onChange={() => setShowComponent(!showComponent)}
         />
-      </div
+      </div>
       {showComponent && <AbortFetchRequest />} */}
       <br />
-      <UserForm />
+      {/* <div style={{ margin: "1rem", fontSize: "25px" }}>
+        <label htmlFor="showcomponent">Show Component</label>
+        <input
+          type="checkbox"
+          checked={showComponent}
+          id="showcomponent"
+          onChange={() => setShowComponent(!showComponent)}
+        />
+      </div>
+      {showComponent && <StrictModeExample />} */}
+      <br />
+      <AutomaticFocus />
     </>
   );
 }

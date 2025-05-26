@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
 //useEffect (a hook)=> for => fetch data from api,eventListeners, other side effects
+// with useEffect ✅ You can do things like:
+// •	fetch data
+// •	set up event listeners
+// •	start a timer or interval
+// •	focus an input
 // before react 16 => we used => class based components => which has =>react life cycle  methods =>like => componentDidMount
 // useEffect in present provide functionality of componentDidMount and other life cycle methods
 
