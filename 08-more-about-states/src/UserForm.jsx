@@ -19,7 +19,8 @@ function UserForm() {
           onChange={(e) => setFirstName(e.target.value)}
         />
         <br />
-        <label htmlFor="firstName">Lastname : </label>
+        <br />
+        <label htmlFor="lastName">Lastname : </label>
         <input
           type="text"
           id="lastName"
