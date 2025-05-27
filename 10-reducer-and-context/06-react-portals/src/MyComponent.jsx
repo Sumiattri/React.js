@@ -7,7 +7,6 @@
 // 3. createPoratal fnction takes two argument, first one is anything that we want to render and second thing is the selection of id
 //    of the div in which we want to render our componet, means documeht.getElementById("name_of_id_of_the_div")
 
-import React from "react";
 import { createPortal } from "react-dom";
 
 function MyComponent() {
