@@ -25,18 +25,15 @@ function AddTodoForm() {
       <form
         onSubmit={handleSubmit}
         style={{
-          display: "flex",
-          justifyContent: "center",
+          display: "grid",
+          gridTemplateColumns: "1fr 120px",
           alignItems: "center",
-          gap: "10px",
-          marginBottom: "20px",
-          backgroundColor: "white",
-          padding: "10px",
-          borderRadius: "10px",
-          border: "none",
-          width: "100%",
-          maxWidth: "500px",
-          margin: "auto",
+          margin: "1rem auto",
+          padding: "0.7rem",
+          borderRadius: "8px",
+          width: "90%" /* Responsive width */,
+          maxWidth: "700px",
+          backgroundColor: "#fff",
         }}
       >
         <input
@@ -45,8 +42,28 @@ function AddTodoForm() {
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          style={{
+            width: "80%",
+            height: "25px",
+            boxSizing: "border-box",
+            border: "none",
+            outline: "none",
+          }}
         />
-        <button type="Submit">Add Todo</button>
+        <button
+          type="Submit"
+          style={{
+            height: "30px",
+            borderRadius: "8px",
+            fontSize: "1rem",
+            fontWeight: "560",
+            border: "none",
+            backgroundColor: "#2c3e50",
+            color: "white",
+          }}
+        >
+          Add Todo
+        </button>
       </form>
     </div>
   );

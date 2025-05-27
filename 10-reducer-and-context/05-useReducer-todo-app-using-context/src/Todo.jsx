@@ -11,19 +11,15 @@ function Todo({ id, title, completed }) {
   return (
     <div
       style={{
-        border: "1px solid black",
-        margin: "10px",
-        padding: "3px",
-        borderRadius: "10px",
-        backgroundColor: "rgb(156, 150, 150)",
+        backgroundColor: "grey",
         display: "flex",
-        alignItems: "center",
         justifyContent: "space-between",
-        width: "100%", // Change this to a percentage or fixed width
-        maxWidth: "800px", // Increase max width
-        height: "50px",
-        paddingLeft: "15px",
-        paddingRight: "15px",
+        alignItems: "center",
+        margin: "1rem auto",
+        padding: "1rem",
+        borderRadius: "8px",
+        width: "90%" /* Responsive width */,
+        maxWidth: "700px",
       }}
     >
       <input

@@ -7,11 +7,10 @@ function App() {
     <TodosProvider>
       <div
         style={{
-          margin: "0 auto",
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          maxWidth: "900px",
+          width: "95%",
+          margin: "auto",
+          display: "grid",
         }}
       >
         <AddTodoForm />
