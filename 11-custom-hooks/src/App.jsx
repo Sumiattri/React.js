@@ -2,7 +2,7 @@ import React from "react";
 import useFetch from "./hooks/useFetch";
 
 function App() {
-  const { data } = useFetch();
+  const { data } = useFetch("https://jsonplaceholder.typicode.com/users");
   return (
     <>
       {data &&
