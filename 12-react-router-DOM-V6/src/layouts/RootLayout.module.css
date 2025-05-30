@@ -1,0 +1,8 @@
+.activeNav {
+  color: red;
+  font-weight: bold;
+  border-bottom: 2px solid red;
+}
+.activeNav:hover {
+  text-decoration: none;
+}

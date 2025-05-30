@@ -1,4 +1,5 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
+import styles from "./RootLayout.module.css";
 function Rootlayout() {
   return (
     <div>
@@ -6,19 +7,42 @@ function Rootlayout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              className={(obj) => {
+                return obj.isActive ? styles.activeNav : null;
+              }}
+            >
+              Home
+            </NavLink>
+            {/*  NavLink provides a default class active to whichever tag we
+            click, which Link doesn't. We can also // set our own class manually
+            like we did above */}
           </li>
           <li>
-            <Link to="about">About</Link>
+            <NavLink
+              to="about"
+              className={({ isActive }) => {
+                return isActive ? styles.activeNav : null;
+              }}
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to="contact">Contact</Link>
+            <NavLink
+              to="contact"
+              className={(obj) => {
+                return obj.isActive ? styles.activeNav : null;
+              }}
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
       </nav>
       <hr />
       <main>
-        <h1>Main Content</h1>
         <Outlet />
       </main>
     </div>
