@@ -39,6 +39,16 @@ function Rootlayout() {
               Contact
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="posts"
+              className={(obj) => {
+                return obj.isActive ? styles.activeNav : null;
+              }}
+            >
+              Posts
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <hr />
