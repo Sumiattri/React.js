@@ -35,7 +35,9 @@ const router = createBrowserRouter(
             <Posts />
           </RequiredAuth>
         }
-      />
+      />{" "}
+      // here RequiredAuth is acting as a route guard and Posts is the protected
+      Route
       <Route path="posts/:id" element={<PostDetails />} /> // this id is called
       route parameter and can be accessed // in PostDetails by using useParams()
       <Route path="login" element={<Login />} />
