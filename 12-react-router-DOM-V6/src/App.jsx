@@ -20,6 +20,7 @@ import {
 
 import Rootlayout from "./layouts/Rootlayout";
 import RequiredAuth from "./components/RequiredAuth";
+import AuthProvider from "./context/AuthProvider";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,7 +45,11 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;

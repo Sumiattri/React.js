@@ -1,6 +1,9 @@
 import { Outlet, Link, NavLink } from "react-router-dom";
 import styles from "./RootLayout.module.css";
+import { useAuth } from "../context/AuthProvider";
 function Rootlayout() {
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+
   return (
     <div>
       <h1>Nav</h1>
@@ -49,7 +52,22 @@ function Rootlayout() {
               Posts
             </NavLink>
           </li>
+          {!isLoggedIn && (
+            <li>
+              <NavLink
+                to="login"
+                className={(obj) => {
+                  return obj.isActive ? styles.activeNav : null;
+                }}
+              >
+                Login
+              </NavLink>
+            </li>
+          )}
         </ul>
+        {isLoggedIn && (
+          <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+        )}
       </nav>
       <hr />
       <main>
