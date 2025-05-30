@@ -5,12 +5,21 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import { Home, Contact, About, Error, Posts, PostDetails } from "./pages";
+import {
+  Home,
+  Contact,
+  About,
+  Error,
+  Posts,
+  PostDetails,
+  Login,
+} from "./pages";
 
 // react automatically looks for index.js file (barrel file) in pages folder and tries
 // to import these component from there, if they have been exported from there
 
 import Rootlayout from "./layouts/Rootlayout";
+import RequiredAuth from "./components/RequiredAuth";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,9 +27,17 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
-      <Route path="posts" element={<Posts />} />
+      <Route
+        path="posts"
+        element={
+          <RequiredAuth>
+            <Posts />
+          </RequiredAuth>
+        }
+      />
       <Route path="posts/:id" element={<PostDetails />} /> // this id is called
       route parameter and can be accessed // in PostDetails by using useParams()
+      <Route path="login" element={<Login />} />
       <Route path="*" element={<Error />} />
     </Route>
   )
