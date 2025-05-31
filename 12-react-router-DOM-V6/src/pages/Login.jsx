@@ -6,7 +6,7 @@ function Login() {
 
   function login() {
     setIsLoggedIn(true);
-    navigate("/", { replace: true });
+    navigate("/", { replace: true }); // this replace will save us from logging out, if we press back after logging
   }
   return (
     <div>
