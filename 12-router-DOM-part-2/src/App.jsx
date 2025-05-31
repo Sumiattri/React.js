@@ -21,6 +21,8 @@ import {
 import Rootlayout from "./layouts/Rootlayout";
 import RequiredAuth from "./components/RequiredAuth";
 import AuthProvider from "./context/AuthProvider";
+import { loader as fetchPosts } from "./pages/Posts";
+import { loader as fetchSinglePost } from "./pages/PostDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,22 +32,25 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route
         path="posts"
+        loader={fetchPosts}
+        errorElement={<Error />}
         element={
           <RequiredAuth>
             <Posts />
           </RequiredAuth>
         }
-      />{" "}
+      />
       // here RequiredAuth is acting as a route guard and Posts is the protected
       Route
       <Route
         path="posts/:id"
+        loader={fetchSinglePost}
         element={
           <RequiredAuth>
             <PostDetails />
           </RequiredAuth>
         }
-      />{" "}
+      />
       // this id is called route parameter and can be accessed // in PostDetails
       by using useParams()
       <Route path="login" element={<Login />} />

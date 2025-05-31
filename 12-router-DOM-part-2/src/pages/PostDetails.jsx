@@ -1,18 +1,19 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-function PostDetails() {
-  const { id } = useParams();
-  const url = "https://jsonplaceholder.typicode.com/posts";
-  const [post, setPost] = useState();
-  useEffect(() => {
-    async function fetchPost() {
-      const res = await fetch(`${url}/${id}`);
-      const data = await res.json();
-      setPost(data);
-    }
-    fetchPost();
-  }, []);
+import { useLoaderData } from "react-router-dom";
 
+export async function loader(xyz) {
+  // console.log(xyz);
+  const { params } = xyz;
+  const { id } = params;
+  // react-router-dom will pass a object to the loader function , having a params or parameter object, which
+  // will have the id we use, thus wwe can get id(route paramter) without use of useParams()
+  const url = "https://jsonplaceholder.typicode.com/posts";
+  const res = await fetch(`${url}/${id}`);
+  const data = await res.json();
+  return data;
+}
+
+function PostDetails() {
+  const post = useLoaderData();
   return (
     <div>
       {post && (
