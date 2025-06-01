@@ -14,6 +14,8 @@ export async function loader({ request }) {
 
   try {
     const response = await axios.get(movieSearchEndpoint);
+    // console.log(response);
+
     return {
       movieApiResponse: response.data,
       searchTerm: searchTerm,
