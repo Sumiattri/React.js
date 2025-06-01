@@ -19,6 +19,7 @@ export async function loader(args, { isLoggedIn }) {
   // cause network request will already be sent to fetch data, even before the RequiredAuth mounts and checks for isLoggedIn
   // and anyone can see that network request in network tab in browser, so to avoid it, we put this if condition above by passing the
   // isLogged state in the callback of loader function and accepting it here
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
   const res = await fetch(endpoint);
   if (!res.ok) {
     throw new Error("Something went wrong");

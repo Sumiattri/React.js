@@ -1,8 +1,10 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { Outlet, Link, NavLink, useNavigation } from "react-router-dom";
 import styles from "./RootLayout.module.css";
 import { useAuth } from "../context/AuthProvider";
 function Rootlayout() {
   const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const navigation = useNavigation();
+  console.log(navigation);
 
   return (
     <div>
@@ -71,7 +73,7 @@ function Rootlayout() {
       </nav>
       <hr />
       <main>
-        <Outlet />
+        {navigation.state === "loading" ? <h1>Loading.....</h1> : <Outlet />}
       </main>
     </div>
   );
