@@ -13,7 +13,7 @@ export async function loader(args, { isLoggedIn }) {
   const pathname = url.pathname;
 
   if (!isLoggedIn) {
-    return redirect(`/login?redirectTo=${pathname}`);
+    return redirect(`/login?redirectTo=${pathname}`); // thing after login are called search params and can be accesed in ligin using useSearchParms();
   }
   // since loaders fetches the data before the component mounts, so RequiredAuth component will not work here in Loaders,
   // cause network request will already be sent to fetch data, even before the RequiredAuth mounts and checks for isLoggedIn
