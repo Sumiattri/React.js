@@ -8,10 +8,17 @@ import { useLoaderData, redirect } from "react-router-dom";
 
 export async function loader(args, { isLoggedIn }) {
   const endpoint = "https://jsonplaceholder.typicode.com/posts";
+  const request = args.request;
+  const url = new URL(request.url);
+  const pathname = url.pathname;
 
   if (!isLoggedIn) {
-    return redirect("/login");
+    return redirect(`/login?redirectTo=${pathname}`);
   }
+  // since loaders fetches the data before the component mounts, so RequiredAuth component will not work here in Loaders,
+  // cause network request will already be sent to fetch data, even before the RequiredAuth mounts and checks for isLoggedIn
+  // and anyone can see that network request in network tab in browser, so to avoid it, we put this if condition above by passing the
+  // isLogged state in the callback of loader function and accepting it here
   const res = await fetch(endpoint);
   if (!res.ok) {
     throw new Error("Something went wrong");

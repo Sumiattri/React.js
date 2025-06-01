@@ -19,7 +19,6 @@ import {
 // to import these component from there, if they have been exported from there
 
 import Rootlayout from "./layouts/Rootlayout";
-import RequiredAuth from "./components/RequiredAuth";
 
 import { loader as fetchPosts } from "./pages/Posts";
 import { loader as fetchSinglePost } from "./pages/PostDetails";
@@ -42,11 +41,7 @@ function App() {
         <Route
           path="posts/:id" // this id is called route parameter and can be accessed in PostDetails by using useParams()
           loader={(args) => fetchSinglePost(args, { isLoggedIn: isLoggedIn })}
-          element={
-            <RequiredAuth>
-              <PostDetails />
-            </RequiredAuth>
-          } // here RequiredAuth is acting as a route guard and Posts is the  protected Route
+          element={<PostDetails />}
         />
         <Route path="login" element={<Login />} />
         <Route path="*" element={<Error />} />
