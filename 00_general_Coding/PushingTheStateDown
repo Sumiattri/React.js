@@ -1,0 +1,57 @@
+Great follow-up, Sumit! 🔽
+
+You’ve already learned about “lifting state up” — now let’s talk about the natural opposite:
+
+⸻
+
+🔽 What does “pushing the state down” mean?
+
+It means passing state (or state-updating functions) from a parent component to its child component via props.
+
+So:
+• The parent owns the state
+• The child just uses it (or updates it if you pass a setter)
+
+⸻
+
+🧠 Why we push state down:
+• To let child components display or interact with shared data
+• Keeps the actual state logic in one central place (usually the parent)
+• Encourages unidirectional (one-way) data flow → which is how React likes it
+
+⸻
+
+📦 Simple example:
+
+function Parent() {
+const [count, setCount] = useState(0);
+
+return <Child count={count} onIncrement={() => setCount(count + 1)} />;
+}
+
+function Child({ count, onIncrement }) {
+return (
+<div>
+<p>Count: {count}</p>
+<button onClick={onIncrement}>Add 1</button>
+</div>
+);
+}
+
+✅ The state lives in Parent
+✅ It is pushed down to Child as props
+✅ Child just uses it and can trigger updates
+
+⸻
+
+🔁 Push vs Lift:
+
+Concept Description
+Lifting state up Move state to a common parent
+Pushing state down Pass state or setters from parent to child
+
+You’ll often do both in one app — lift state up to share it, then push it down to let components use it.
+
+⸻
+
+Let me know if you want to refactor a part of your movie app where we lift + push state to make things cleaner — like filters, search, or favorites ❤️🎬✅
