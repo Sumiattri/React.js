@@ -16,20 +16,20 @@ import { Form } from "react-router-dom";
 // 	•	Submitting a form that targets that route (like with action=".")
 // 	•	Changing the URL search parameters (in a GET request)
 
-function SearchForms({ defaultName }) {
+import styles from "./SearchForm.module.css";
+function SearchForm({ defaultName }) {
   return (
-    <div>
-      <Form>
-        <input
-          type="text"
-          name="search"
-          defaultValue={defaultName}
-          id="search"
-        />
-        <button type="submit">Search</button>
-      </Form>
-    </div>
+    <Form method="GET" className={`container ${styles.form}`}>
+      <input
+        type="text"
+        name="search"
+        id="search"
+        defaultValue={defaultName}
+        required
+      />
+      <button type="submit">Search</button>
+    </Form>
   );
 }
 
-export default SearchForms;
+export default SearchForm;

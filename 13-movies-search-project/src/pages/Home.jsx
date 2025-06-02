@@ -8,7 +8,7 @@ export async function loader({ request }) {
   const url = new URL(request.url);
   // console.log(url);
 
-  const searchTerm = url.searchParams.get("search") || "marvel";
+  const searchTerm = url.searchParams.get("search") || "venom";
   // console.log(searchTerm);
   const movieSearchEndpoint = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`;
 
