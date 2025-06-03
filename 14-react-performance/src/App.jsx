@@ -1,4 +1,5 @@
-import FirstChild from "./FirstChild";
+import FirstChild from "./ReactMemoExample/FirstChild";
+import ExtraComponent from "./ReactMemoExample/ExtraComponent";
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
         alignItems: "center", // vertical center
       }}
     >
-      <FirstChild />
+      <FirstChild>
+        <ExtraComponent />
+      </FirstChild>
     </div>
   );
 }
