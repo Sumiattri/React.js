@@ -1,4 +1,5 @@
 import Example1UseMemo from "./UseMemo/Example1UseMemo";
+import Example2UseMemo from "./UseMemo/Example2UseMemo";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         alignItems: "center", // vertical center
       }}
     >
-      <Example1UseMemo />
+      {/* <Example1UseMemo /> */}
+      <Example2UseMemo />
     </div>
   );
 }
