@@ -1,7 +1,11 @@
-import React from "react";
+import TodosApp from "./features/todos/TodosApp";
 
 function App() {
-  return <div>App</div>;
+  return (
+    <div>
+      <TodosApp />
+    </div>
+  );
 }
 
 export default App;
