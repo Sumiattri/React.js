@@ -6,3 +6,5 @@ export const store = configureStore({
     counter: counterReducer,
   },
 });
+console.log(store.getState());
+// console.log(store.getState().counter);
