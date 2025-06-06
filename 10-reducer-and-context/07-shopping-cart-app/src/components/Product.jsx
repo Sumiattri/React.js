@@ -1,5 +1,5 @@
 import { useCart } from "../context/CartProvider";
-import styles from "./Product.module.css";
+import styles from "../CSS/Product.module.css";
 
 function Product({ id, title, price, img }) {
   const { addItemToCart } = useCart();

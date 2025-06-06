@@ -1,6 +1,6 @@
 import { useCart } from "../context/CartProvider";
 import CartItem from "./CartItem";
-import styles from "./Cart.module.css";
+import styles from "../CSS/Cart.module.css";
 function Cart() {
   const { cart } = useCart();
   // if (cart.lenth === 0) {

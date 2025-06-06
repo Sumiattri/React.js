@@ -2,7 +2,7 @@ import Modal from "./UI/Modal";
 import Cart from "./Cart";
 import { useState, useEffect } from "react";
 import { useCart } from "../context/CartProvider";
-import styles from "./Header.module.css";
+import styles from "../CSS/Header.module.css";
 import Container from "./UI/Container";
 import { FaCartShopping } from "react-icons/fa6";
 

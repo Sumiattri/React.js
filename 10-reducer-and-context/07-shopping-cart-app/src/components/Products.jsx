@@ -2,7 +2,7 @@ import React from "react";
 import { products } from "../data/products";
 import Product from "./Product";
 import Container from "./UI/Container";
-import styles from "./Products.module.css";
+import styles from "../CSS/Products.module.css";
 
 function Products() {
   return (
