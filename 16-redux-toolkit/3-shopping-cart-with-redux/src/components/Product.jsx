@@ -1,8 +1,9 @@
-import { useCart } from "../context/CartProvider";
-import styles from "./Product.module.css";
+import { addItemToCart } from "../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import styles from "../CSS/Product.module.css";
 
 function Product({ id, title, price, img }) {
-  const { addItemToCart } = useCart();
+  const dispatch = useDispatch();
 
   function handleAdd() {
     // for (let item of cart) {
@@ -18,7 +19,7 @@ function Product({ id, title, price, img }) {
       quantity: 1,
       img: img,
     };
-    addItemToCart(newCartItem);
+    dispatch(addItemToCart(newCartItem));
   }
 
   return (

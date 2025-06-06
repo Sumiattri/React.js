@@ -1,17 +1,19 @@
 import Modal from "./UI/Modal";
 import Cart from "./Cart";
 import { useState, useEffect } from "react";
-import { useCart } from "../context/CartProvider";
-import styles from "./Header.module.css";
+import { useSelector } from "react-redux";
+import styles from "../CSS/Header.module.css";
 import Container from "./UI/Container";
 import { FaCartShopping } from "react-icons/fa6";
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { cart } = useCart();
+  const cart = useSelector((state) => state.cart);
+
   const totalQuantity = cart.reduce((acc, item) => {
     return acc + item.quantity;
   }, 0);
+
   function closeModal() {
     setIsModalOpen(false);
   }

@@ -1,10 +1,12 @@
-import { useCart } from "../context/CartProvider";
-import styles from "./CartItem.module.css";
+import { RemoveItemToCart, IncQty, DcQty } from "../features/cart/cartSlice";
+import styles from "../CSS/CartItem.module.css";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
+import { useDispatch } from "react-redux";
 
 function CartItem({ id, title, price, img, quantity }) {
-  const { handleInc, handleDec, handleDel } = useCart();
+  const dispatch = useDispatch();
+
   return (
     <div className={styles.cartItems}>
       {/* left */}
@@ -15,18 +17,18 @@ function CartItem({ id, title, price, img, quantity }) {
       {/* right */}
       <div className={styles.otherControls}>
         <div className={styles.qtyInput}>
-          <button onClick={() => handleDec(id)}>
+          <button onClick={() => dispatch(DcQty({ id }))}>
             <AiOutlineMinus />
           </button>
           <span className={styles.quantityDisplay}>{quantity}</span>
-          <button onClick={() => handleInc(id)}>
+          <button onClick={() => dispatch(IncQty({ id }))}>
             <AiOutlinePlus />
           </button>
         </div>
         <p>&#8377;{quantity * price}</p>
         <button
           onClick={() => {
-            handleDel(id);
+            dispatch(RemoveItemToCart({ id }));
           }}
           className={styles.removeItemBtn}
         >

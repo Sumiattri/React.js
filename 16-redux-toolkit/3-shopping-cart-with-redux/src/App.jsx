@@ -1,11 +1,12 @@
 import Products from "./components/Products";
-import CartProvider from "./context/CartProvider";
 import Header from "./components/Header";
 import { ToastContainer } from "react-toastify";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 function App() {
   return (
-    <CartProvider>
+    <Provider store={store}>
       <ToastContainer
         position="bottom-right"
         newestOnTop={true}
@@ -14,7 +15,7 @@ function App() {
       />
       <Header />
       <Products />
-    </CartProvider>
+    </Provider>
   );
 }
 
