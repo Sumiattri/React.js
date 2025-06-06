@@ -1,0 +1,41 @@
+.header {
+  position: sticky; /* or you can use fixed */
+
+  top: 0;
+  z-index: 1000;
+  background-color: #637d88;
+  color: #ecf0f1;
+  margin-bottom: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+}
+
+.showCartButton {
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 0.8rem;
+}
+.CartIconAndNumber {
+  position: relative;
+}
+.number {
+  border: 1px solid rgb(209, 214, 209);
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  font-size: 0.5rem;
+  background: red;
+  line-height: 0.85rem;
+  top: -10px;
+  right: -10px;
+}
