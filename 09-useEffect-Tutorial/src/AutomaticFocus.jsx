@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 function AutomaticFocus() {
   const userNameRef = useRef("");
   useEffect(() => {
+    console.log(userNameRef);
+
     userNameRef.current.focus();
   });
   return (

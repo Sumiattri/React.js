@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 // •	Clear intervals/timeouts
 // •	Abort fetch requests
 
-//if there is some value inside the dependency array, then  every time our component will render, cleanup function will be called
+//if there is some value inside the dependency array, then  every time that value changes, cleanup function will be called
 // before the useEffect callback function is called.
 
 function CleanupFunctionDemo() {

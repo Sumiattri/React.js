@@ -9,11 +9,11 @@ import { useEffect, useState } from "react";
 // before react 16 => we used => class based components => which has =>react life cycle  methods =>like => componentDidMount
 // useEffect in present provide functionality of componentDidMount and other life cycle methods
 
-// useEffect is called everytime, whenever our coponent is rendered or re-rendered
-// useEffect => CAN take two arguments => 1st is the calklback function and 2nd is dependency array(optional)
+// useEffect => CAN take two arguments => 1st is the callback function and 2nd is dependency array(optional)
 
 // if dependency array is a empty array [ ], then useEffect wiil be called only once at initial render of our component
 // if dependency array has some value, then useEffect will be called only when that value changes
+// is no dependency array, useEffect will run on every re-render of our component
 
 function ExampleUseEffect() {
   console.log("component rendered");

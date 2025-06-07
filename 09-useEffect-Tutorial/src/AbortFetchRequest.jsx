@@ -11,6 +11,8 @@ function AbortFetchRequest() {
 
   useEffect(() => {
     const controller = new AbortController();
+    console.log(controller);
+
     const signal = controller.signal;
     async function fetchData() {
       const response = await fetch(URL, { signal: signal });
@@ -28,7 +30,6 @@ function AbortFetchRequest() {
     fetchData();
     return () => {
       console.log("Aborting request");
-
       controller.abort();
       console.log("Request aborted");
     };

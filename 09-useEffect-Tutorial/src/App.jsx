@@ -17,7 +17,7 @@ function App() {
       {/* uncomment the  components while revising  */}
       {/* <ExampleUseEffect /> */}
       <br />
-      <FetchDataExample />
+      {/* <FetchDataExample /> */}
       <br />
       {/* <div style={{ margin: "1rem", fontSize: "25px" }}>
         <label htmlFor="showcomponent">ShowComponent</label>
@@ -64,7 +64,7 @@ function App() {
       </div>
       {showComponent && <StrictModeExample />} */}
       <br />
-      {/* <AutomaticFocus /> */}
+      <AutomaticFocus />
     </>
   );
 }
