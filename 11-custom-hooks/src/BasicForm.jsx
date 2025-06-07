@@ -19,7 +19,7 @@ function BasicForm() {
           type="text"
           id="lastname"
           value={lastname}
-          onChange={(e) => setFirstname(e.target.value)}
+          onChange={(e) => setLastName(e.target.value)}
         />
       </form>
       <p>firstName:{firstname}</p>
