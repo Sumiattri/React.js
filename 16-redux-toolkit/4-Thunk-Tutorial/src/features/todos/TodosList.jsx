@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { fetchTodos } from "./todosSlice";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import SingleTodos from "./SingleTodos";
 
 function TodosList() {
   const { todos } = useSelector((state) => state.todos);
@@ -33,7 +34,7 @@ function TodosList() {
       <h2>Todos</h2>
 
       {todos.map((todo) => (
-        <p key={todo.id}>{todo.title}</p>
+        <SingleTodos key={todo.id} {...todo} />
       ))}
     </div>
   );

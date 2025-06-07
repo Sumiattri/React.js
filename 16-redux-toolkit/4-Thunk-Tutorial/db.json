@@ -1,89 +1,14 @@
 {
   "todos": [
     {
-      "id": "1",
-      "title": "make a list",
-      "completed": false
-    },
-    {
-      "id": "2",
-      "title": "make a array",
-      "completed": false
-    },
-    {
-      "id": "3",
-      "title": "make a object",
-      "completed": false
-    },
-    {
-      "id": "5274",
+      "id": "5b65",
       "title": "hii",
-      "completed": false
+      "completed": true
     },
     {
-      "id": "7748",
-      "title": "hiii",
-      "completed": false
-    },
-    {
-      "id": "f08b",
-      "title": "",
-      "completed": false
-    },
-    {
-      "id": "cc57",
-      "title": "",
-      "completed": false
-    },
-    {
-      "id": "407e",
-      "title": "",
-      "completed": false
-    },
-    {
-      "id": "fdb6",
-      "title": "",
-      "completed": false
-    },
-    {
-      "id": "42a7",
-      "title": "fvfxvfd",
-      "completed": false
-    },
-    {
-      "id": "b57f",
-      "title": "dfvdfv",
-      "completed": false
-    },
-    {
-      "id": "c409",
-      "title": "dfvfd",
-      "completed": false
-    },
-    {
-      "id": "3a03",
-      "title": "",
-      "completed": false
-    },
-    {
-      "id": "fcb6",
-      "title": "dsscs",
-      "completed": false
-    },
-    {
-      "id": "1357",
-      "title": "cvx",
-      "completed": false
-    },
-    {
-      "id": "958a",
-      "title": "fgbvv",
-      "completed": false
-    },
-    {
-      "id": "77d6",
-      "title": "vb b ",
-      "completed": false
+      "id": "6cdb",
+      "title": "ther",
+      "completed": true
     }
   ]
 }

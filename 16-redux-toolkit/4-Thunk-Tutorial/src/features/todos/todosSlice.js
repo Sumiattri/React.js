@@ -17,6 +17,20 @@ export const addTodos = createAsyncThunk("todos/add", async (title) => {
   return response.data;
 });
 
+export const deleteTodos = createAsyncThunk("todos/delete", async ({ id }) => {
+  await axios.delete(`http://localhost:8001/todos/${id}`);
+  return { id };
+});
+export const toggleTodos = createAsyncThunk(
+  "todos/toggle",
+  async ({ id, completed }) => {
+    const response = await axios.patch(`http://localhost:8001/todos/${id}`, {
+      completed: !completed,
+    });
+    return response.data;
+  }
+);
+
 const todosSlice = createSlice({
   initialState: {
     todos: [],
@@ -45,6 +59,16 @@ const todosSlice = createSlice({
     });
     builders.addCase(addTodos.rejected, (state, action) => {
       console.log("rejected....");
+    });
+    builders.addCase(deleteTodos.fulfilled, (state, action) => {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
+    });
+    builders.addCase(toggleTodos.fulfilled, (state, action) => {
+      state.todos.forEach((todo) => {
+        if (todo.id === action.payload.id) {
+          todo.completed = action.payload.completed;
+        }
+      });
     });
   },
 });
