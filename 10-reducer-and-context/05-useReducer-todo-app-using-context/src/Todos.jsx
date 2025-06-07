@@ -1,4 +1,3 @@
-import React from "react";
 import Todo from "./Todo.jsx";
 // import { useContext } from "react";
 // import { TodoContext } from "./TodosProvider.jsx";

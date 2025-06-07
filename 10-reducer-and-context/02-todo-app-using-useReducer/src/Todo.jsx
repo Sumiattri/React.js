@@ -1,4 +1,3 @@
-import React from "react";
 import { GiCrossMark } from "react-icons/gi";
 
 function Todo({ id, title, completed, dispatch }) {

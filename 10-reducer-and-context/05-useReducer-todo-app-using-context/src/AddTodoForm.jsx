@@ -1,9 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { useTodos } from "./TodosProvider";
 
 function AddTodoForm() {
+  const autoFocusRef = useRef();
+  useEffect(() => {
+    autoFocusRef.current.focus();
+  });
   const { addTodo } = useTodos();
   const [title, setTitle] = useState(""); // making new State to store new todo entered by user
 
@@ -49,6 +52,7 @@ function AddTodoForm() {
             border: "none",
             outline: "none",
           }}
+          ref={autoFocusRef}
         />
         <button
           type="Submit"

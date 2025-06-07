@@ -55,7 +55,6 @@ function App() {
         flexDirection: "column",
         alignItems: "center",
         minHeight: "100vh",
-        border: " 2px solid red",
       }}
     >
       <AddTodoForm dispatch={dispatch} />
