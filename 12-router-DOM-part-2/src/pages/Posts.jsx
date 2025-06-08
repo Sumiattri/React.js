@@ -7,13 +7,15 @@ import { useLoaderData, redirect } from "react-router-dom";
 // 2). useLoaderData() and get data
 
 export async function loader(args, { isLoggedIn }) {
+  console.log(args);
+
   const endpoint = "https://jsonplaceholder.typicode.com/posts";
-  const request = args.request;
+  const request = args.request; // // the request object (like URL, headers, etc.)
   const url = new URL(request.url);
   const pathname = url.pathname;
 
   if (!isLoggedIn) {
-    return redirect(`/login?redirectTo=${pathname}`); // thing after login are called search params and can be accesed in ligin using useSearchParms();
+    return redirect(`/login?redirectTo=${pathname}`); // thing after login are called search params and can be accesed in login using useSearchParms();
   }
   // since loaders fetches the data before the component mounts, so RequiredAuth component will not work here in Loaders,
   // cause network request will already be sent to fetch data, even before the RequiredAuth mounts and checks for isLoggedIn

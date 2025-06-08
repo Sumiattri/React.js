@@ -1,7 +1,8 @@
 import { useLoaderData, redirect } from "react-router-dom";
 
 export async function loader(xyz, { isLoggedIn }) {
-  // console.log(xyz);
+  console.log(xyz);
+
   const { params } = xyz;
   const { id } = params;
   // react-router-dom will pass a object to the loader function , having a params or parameter object, which

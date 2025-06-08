@@ -30,11 +30,12 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Rootlayout />}>
         <Route index element={<Home />} />
+        you
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route
           path="posts"
-          loader={(args) => fetchPosts(args, { isLoggedIn: isLoggedIn })}
+          loader={(args) => fetchPosts(args, { isLoggedIn: isLoggedIn })} // args is the parameter object that React Router automatically provides to every loader function.
           errorElement={<Error />}
           element={<Posts />} // no need for RequiredAuth anymore, as we will check loggedIn status while fetching data in Posts
         />

@@ -74,6 +74,8 @@ function Rootlayout() {
       <hr />
       <main>
         {navigation.state === "loading" ? <h1>Loading.....</h1> : <Outlet />}
+        {/* use Navigation tracks the loading or idle state of a route based on the
+        lcomponent that route is connected tooader used in the */}
       </main>
     </div>
   );
