@@ -6,6 +6,9 @@ import { useLoaderData, redirect } from "react-router-dom";
 // 1).provide loader function to the route
 // 2). useLoaderData() and get data
 
+// loaders also do automatic error handling
+// and loading state can be handled by useNavigation component in RootLayout component
+
 export async function loader(args, { isLoggedIn }) {
   console.log(args);
 
