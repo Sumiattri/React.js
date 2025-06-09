@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
+const initialTodos = [
   { id: 1, title: "do-nothing", completed: false },
   { id: 2, title: "do-everything", completed: true },
 ];
 
 const todosSlice = createSlice({
   name: "todos",
-  initialState: initialState,
+  initialState: initialTodos,
   reducers: {
     addTodo: (state, action) => {
       state.push(action.payload);
