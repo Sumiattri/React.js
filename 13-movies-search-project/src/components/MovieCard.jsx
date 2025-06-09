@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./MovieCard.module.css";
+import styles from "../CSS/MovieCard.module.css";
 import NoPoster from "../assets/NoPoster.png";
 
 function MovieCard({ Title, Year, imdbID, Type, Poster }) {

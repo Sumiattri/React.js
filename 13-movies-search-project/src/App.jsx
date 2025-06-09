@@ -4,7 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { apiKey } from "./constants";
+
 import { Home, Error, RootLayout, SingleMovieDetail } from "./pages";
 import { loader as MoviesLoader } from "./pages/Home";
 import { loader as SingleMovieLoader } from "./pages/SingleMovieDetail";

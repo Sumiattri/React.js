@@ -1,7 +1,7 @@
 import axios, { Axios } from "axios";
 import { apiKey } from "../constants";
 import { useLoaderData } from "react-router-dom";
-import styles from "./SingleMovieDetail.module.css";
+import styles from "../CSS/SingleMovieDetail.module.css";
 import NoPoster from "../assets/NoPoster.png";
 
 export async function loader({ params }) {

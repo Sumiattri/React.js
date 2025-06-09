@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useNavigation } from "react-router-dom";
-import styles from "./RootLayout.module.css";
+import styles from "../CSS/RootLayout.module.css";
 import LoadingSpinner from "../assets/LoadingSpinner.svg";
 
 function RootLayout() {

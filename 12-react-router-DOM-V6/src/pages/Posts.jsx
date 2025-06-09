@@ -15,15 +15,18 @@ function Posts() {
         console.log(res);
 
         if (!res.ok) {
+          console.log("inside if");
+
           setIsError(true);
           setIsLoading(false);
           throw new Error(`${res.status} Error`);
-          return;
         }
         const data = await res.json();
         setPosts(data);
         setIsLoading(false);
       } catch (error) {
+        console.log("inside catch");
+
         setErr(error.message);
         setIsLoading(false);
         setIsError(true);

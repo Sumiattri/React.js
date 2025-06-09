@@ -1,11 +1,13 @@
 import MovieCard from "./MovieCard";
-import styles from "./MoviesList.module.css";
+import styles from "../CSS/MoviesList.module.css";
 
 function MoviesList({ data }) {
   const { movieApiResponse, error, isError } = data;
   console.log(movieApiResponse);
 
   if (isError) {
+    console.log("hii");
+
     return <h1>{error}</h1>;
   }
 

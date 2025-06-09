@@ -5,6 +5,8 @@ import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 export async function loader({ request }) {
+  // console.log(request);
+
   const url = new URL(request.url);
   // console.log(url);
 
@@ -25,6 +27,7 @@ export async function loader({ request }) {
   } catch (error) {
     const errorMessage =
       error?.response?.data?.error || error?.message || "Something went wrong";
+
     return {
       movieApiResponse: null,
       searchTerm: searchTerm,

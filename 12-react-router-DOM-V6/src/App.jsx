@@ -46,7 +46,7 @@ const router = createBrowserRouter(
           </RequiredAuth>
         }
       />
-      // this id is called route parameter and can be accessed // in PostDetails
+      // this id is called route parameter and can be accessed // in PostDetail
       by using useParams()
       <Route path="login" element={<Login />} />
       <Route path="*" element={<Error />} />
