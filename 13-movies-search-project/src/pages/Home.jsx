@@ -5,10 +5,10 @@ import axios from "axios";
 import { useLoaderData } from "react-router-dom";
 
 export async function loader({ request }) {
-  // console.log(request);
+  console.log(request);
 
   const url = new URL(request.url);
-  // console.log(url);
+  console.log(url);
 
   const searchTerm = url.searchParams.get("search") || "venom";
   // console.log(searchTerm);

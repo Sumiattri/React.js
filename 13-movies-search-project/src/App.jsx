@@ -18,8 +18,6 @@ const router = createBrowserRouter(
         element={<SingleMovieDetail />}
         loader={SingleMovieLoader}
       />
-      <Route />
-      <Route />
     </Route>
   )
 );
